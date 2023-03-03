@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: release-service-mdnt
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: release-service-mdnt
+    app.kubernetes.io/part-of: release-service
+  name: release-service-mdnt
+  namespace: shebert-tenant
+spec:
+  port:
+    targetPort: 8080
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: release-service-mdnt
+    weight: 100
+status: {}
