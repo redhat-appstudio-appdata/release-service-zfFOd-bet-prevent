@@ -23,7 +23,7 @@ spec:
         app.kubernetes.io/instance: release-service-mdnt
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:zfFOd-release-service-mdnt
+      - image: quay.io/redhat-appstudio/user-workload@sha256:81c5ca2d2f7fe86f8617a6096b14fb963200aa5ff101e2849ea4109ebe061290
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
